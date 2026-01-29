@@ -1,0 +1,256 @@
+.about-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #f5f7fa;
+}
+
+.navbar {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+.logo:hover {
+    opacity: 0.8;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.3s;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    opacity: 0.8;
+}
+
+.nav-links a.active {
+    border-bottom: 2px solid white;
+    padding-bottom: 0.25rem;
+}
+
+.cta-button {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    border: 1px solid white;
+    transition: background-color 0.3s;
+    display: inline-block;
+}
+
+.cta-button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.cta-button.signup-button {
+    background-color: #ff6b6b;
+    border: none;
+}
+
+.cta-button.signup-button:hover {
+    background-color: #ee5a52;
+}
+
+.about-hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 6rem 2rem;
+    text-align: center;
+}
+
+.about-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.about-hero p {
+    font-size: 1.3rem;
+    opacity: 0.9;
+}
+
+.about-content {
+    flex: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    width: 100%;
+}
+
+.about-section {
+    background: white;
+    padding: 3rem;
+    border-radius: 10px;
+    margin-bottom: 3rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.about-section h2 {
+    color: #667eea;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.about-section p {
+    color: #555;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.features-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.feature {
+    text-align: center;
+    padding: 2rem;
+    background-color: #f9fafb;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.feature h3 {
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.feature p {
+    color: #777;
+    margin: 0;
+}
+
+.values-list {
+    list-style: none;
+    padding: 0;
+}
+
+.values-list li {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background-color: #f9fafb;
+    border-left: 4px solid #667eea;
+    border-radius: 4px;
+    color: #555;
+    line-height: 1.7;
+}
+
+.values-list strong {
+    color: #667eea;
+}
+
+.cta-section {
+    text-align: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.cta-section h2 {
+    color: white;
+}
+
+.cta-section p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.cta-button-large {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background-color: #ff6b6b;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: 1.5rem;
+}
+
+.cta-button-large:hover {
+    background-color: #ee5a52;
+    transform: translateY(-2px);
+}
+
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+    }
+
+    .nav-links a {
+        width: 100%;
+        text-align: center;
+    }
+
+    .about-hero h1 {
+        font-size: 2rem;
+    }
+
+    .about-hero p {
+        font-size: 1rem;
+    }
+
+    .about-section {
+        padding: 2rem;
+    }
+
+    .about-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .features-list {
+        grid-template-columns: 1fr;
+    }
+}
