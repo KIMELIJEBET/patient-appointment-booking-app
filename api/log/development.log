@@ -1379,3 +1379,553 @@ Processing by AppointmentsController#index as */*
 Completed 200 OK in 39ms (Views: 28.3ms | ActiveRecord: 2.4ms (2 queries, 0 cached) | GC: 20.8ms)
 
 
+Started POST "/api/auth/signup" for ::1 at 2026-01-29 21:43:17 +0300
+Processing by Api::AuthController#signup as */*
+  Parameters: {"user"=>{"name"=>"lavinia dosh", "email"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "auth"=>{"user"=>{"name"=>"lavinia dosh", "email"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*action='signup',application='Api',controller='auth'*/[0m
+  ↳ app/controllers/api/auth_controller.rb:4:in `signup'
+  [1m[36mUser Exists? (2.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'laviniadosh@gmail.com' LIMIT 1 /*action='signup',application='Api',controller='auth'*/[0m
+  ↳ app/controllers/api/auth_controller.rb:4:in `signup'
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "updated_at") VALUES ('2026-01-29 18:43:17.790152', 'laviniadosh@gmail.com', 'lavinia dosh', '$2a$12$.GRVj9zs9qP65ZnAZ/YOo.D5yp8DDu4Zq/4redNLG7LMTf2bKtdja', '2026-01-29 18:43:17.790152') RETURNING "id" /*action='signup',application='Api',controller='auth'*/[0m
+  ↳ app/controllers/api/auth_controller.rb:4:in `signup'
+  [1m[36mTRANSACTION (11.1ms)[0m  [1m[35mCOMMIT /*action='signup',application='Api',controller='auth'*/[0m
+  ↳ app/controllers/api/auth_controller.rb:4:in `signup'
+Completed 201 Created in 377ms (Views: 0.1ms | ActiveRecord: 19.0ms (2 queries, 0 cached) | GC: 0.8ms)
+
+
+Started POST "/api/auth/login" for ::1 at 2026-01-29 21:44:25 +0300
+Processing by Api::AuthController#login as */*
+  Parameters: {"user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT 1 /*action='login',application='Api',controller='auth'*/[0m
+  ↳ app/controllers/api/auth_controller.rb:13:in `login'
+Completed 401 Unauthorized in 2ms (Views: 0.1ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/api/auth/login" for ::1 at 2026-01-29 21:44:35 +0300
+Processing by Api::AuthController#login as */*
+  Parameters: {"user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT 1 /*action='login',application='Api',controller='auth'*/[0m
+  ↳ app/controllers/api/auth_controller.rb:13:in `login'
+Completed 401 Unauthorized in 6ms (Views: 0.3ms | ActiveRecord: 1.0ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/api/auth/login" for ::1 at 2026-01-29 21:44:39 +0300
+Processing by Api::AuthController#login as */*
+  Parameters: {"user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT 1 /*action='login',application='Api',controller='auth'*/[0m
+  ↳ app/controllers/api/auth_controller.rb:13:in `login'
+Completed 401 Unauthorized in 8ms (Views: 0.4ms | ActiveRecord: 1.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/api/auth/signup" for ::1 at 2026-01-29 21:47:02 +0300
+Processing by Api::AuthController#signup as */*
+  Parameters: {"user"=>{"name"=>"Dosh jebet", "email"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "auth"=>{"user"=>{"name"=>"Dosh jebet", "email"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*action='signup',application='Api',controller='auth'*/[0m
+  ↳ app/controllers/api/auth_controller.rb:4:in `signup'
+  [1m[36mUser Exists? (1.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'doshj@gmail.com' LIMIT 1 /*action='signup',application='Api',controller='auth'*/[0m
+  ↳ app/controllers/api/auth_controller.rb:4:in `signup'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "updated_at") VALUES ('2026-01-29 18:47:03.186500', 'doshj@gmail.com', 'Dosh jebet', '$2a$12$PlSsqafGmzFSTfCy7DJWL.r6pBXZnRZwYVTyS4SthLsRoVJwxBieW', '2026-01-29 18:47:03.186500') RETURNING "id" /*action='signup',application='Api',controller='auth'*/[0m
+  ↳ app/controllers/api/auth_controller.rb:4:in `signup'
+  [1m[36mTRANSACTION (11.1ms)[0m  [1m[35mCOMMIT /*action='signup',application='Api',controller='auth'*/[0m
+  ↳ app/controllers/api/auth_controller.rb:4:in `signup'
+Completed 201 Created in 333ms (Views: 0.2ms | ActiveRecord: 13.3ms (2 queries, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/api/appointments" for ::1 at 2026-01-29 21:47:03 +0300
+Processing by Api::AppointmentsController#index as */*
+  Parameters: {"appointment"=>{}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1 /*action='index',application='Api',controller='appointments'*/[0m
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+  [1m[36mAppointment Load (0.8ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."user_id" = 3 /*action='index',application='Api',controller='appointments'*/[0m
+  ↳ app/controllers/api/appointments_controller.rb:7:in `index'
+Completed 200 OK in 14ms (Views: 5.5ms | ActiveRecord: 1.9ms (2 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/api/appointments" for ::1 at 2026-01-29 21:47:03 +0300
+Processing by Api::AppointmentsController#index as */*
+  Parameters: {"appointment"=>{}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1 /*action='index',application='Api',controller='appointments'*/[0m
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+  [1m[36mAppointment Load (0.6ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."user_id" = 3 /*action='index',application='Api',controller='appointments'*/[0m
+  ↳ app/controllers/api/appointments_controller.rb:7:in `index'
+Completed 200 OK in 10ms (Views: 3.9ms | ActiveRecord: 1.4ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/api/auth/login" for ::1 at 2026-01-29 21:56:10 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Api'*/[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 1 pending migration:
+
+db/migrate/20260129185401_add_role_to_users.rb
+
+
+):
+  
+activerecord (8.1.2) lib/active_record/migration.rb:743:in `check_pending_migrations'
+activerecord (8.1.2) lib/active_record/migration.rb:660:in `block (2 levels) in call'
+activesupport (8.1.2) lib/active_support/file_update_checker.rb:88:in `execute'
+activesupport (8.1.2) lib/active_support/file_update_checker.rb:98:in `execute_if_updated'
+activerecord (8.1.2) lib/active_record/migration.rb:667:in `block in call'
+activerecord (8.1.2) lib/active_record/migration.rb:657:in `synchronize'
+activerecord (8.1.2) lib/active_record/migration.rb:657:in `call'
+actionpack (8.1.2) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.1.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (8.1.2) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.1.2) lib/action_dispatch/middleware/executor.rb:20:in `call'
+actionpack (8.1.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+actionpack (8.1.2) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.1.2) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.1.2) lib/rails/rack/logger.rb:29:in `call'
+actionpack (8.1.2) lib/action_dispatch/middleware/remote_ip.rb:98:in `call'
+actionpack (8.1.2) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.2.4) lib/rack/runtime.rb:24:in `call'
+activesupport (8.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:30:in `call'
+actionpack (8.1.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.1.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.1.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.1.2) lib/action_dispatch/middleware/executor.rb:20:in `call'
+actionpack (8.1.2) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.2.4) lib/rack/sendfile.rb:131:in `call'
+actionpack (8.1.2) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+rack-cors (3.0.0) lib/rack/cors.rb:102:in `call'
+railties (8.1.2) lib/rails/engine.rb:534:in `call'
+puma (7.2.0) lib/puma/configuration.rb:296:in `call'
+puma (7.2.0) lib/puma/request.rb:103:in `block in handle_request'
+puma (7.2.0) lib/puma/thread_pool.rb:355:in `with_force_shutdown'
+puma (7.2.0) lib/puma/request.rb:102:in `handle_request'
+puma (7.2.0) lib/puma/server.rb:503:in `process_client'
+puma (7.2.0) lib/puma/server.rb:262:in `block in run'
+puma (7.2.0) lib/puma/thread_pool.rb:182:in `block in spawn_thread'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5878493172211724820) /*application='Api'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Api'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='Api'*/[0m
+Migrating to AddRoleToUsers (20260129185401)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='Api'*/[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "users" ADD "role" character varying DEFAULT 'user' /*application='Api'*/[0m
+  [1m[35m (11.2ms)[0m  [1m[35mCREATE INDEX "index_users_on_role" ON "users" ("role") /*application='Api'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20260129185401') RETURNING "version" /*application='Api'*/[0m
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT /*application='Api'*/[0m
+Migrating to AddPasswordResetToUsers (20260129190014)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*application='Api'*/[0m
+  [1m[35m (2.7ms)[0m  [1m[35mALTER TABLE "users" ADD "password_reset_token" character varying /*application='Api'*/[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "users" ADD "password_reset_sent_at" timestamp(6) /*application='Api'*/[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_password_reset_token" ON "users" ("password_reset_token") /*application='Api'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20260129190014') RETURNING "version" /*application='Api'*/[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT /*application='Api'*/[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(5878493172211724820) /*application='Api'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Api'*/[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[35mSET search_path TO public /*application='Api'*/[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[35mSET search_path TO "$user", public /*application='Api'*/[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[35mSET search_path TO public /*application='Api'*/[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[35mSET search_path TO "$user", public /*application='Api'*/[0m
+Started POST "/api/auth/login" for ::1 at 2026-01-29 22:05:03 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Api'*/[0m
+  
+ArgumentError (Before process_action callback :authorized has not been defined):
+  
+app/controllers/api/auth_controller.rb:2:in `<class:AuthController>'
+app/controllers/api/auth_controller.rb:1:in `<main>'
+Started POST "/api/auth/signup" for ::1 at 2026-01-29 22:05:40 +0300
+  
+ArgumentError (Before process_action callback :authorized has not been defined):
+  
+app/controllers/api/auth_controller.rb:2:in `<class:AuthController>'
+app/controllers/api/auth_controller.rb:1:in `<main>'
+Started POST "/api/auth/signup" for ::1 at 2026-01-29 22:05:45 +0300
+  
+ArgumentError (Before process_action callback :authorized has not been defined):
+  
+app/controllers/api/auth_controller.rb:2:in `<class:AuthController>'
+app/controllers/api/auth_controller.rb:1:in `<main>'
+Started POST "/api/auth/signup" for ::1 at 2026-01-29 22:05:53 +0300
+  
+ArgumentError (Before process_action callback :authorized has not been defined):
+  
+app/controllers/api/auth_controller.rb:2:in `<class:AuthController>'
+app/controllers/api/auth_controller.rb:1:in `<main>'
+Started POST "/api/auth/signup" for ::1 at 2026-01-29 22:07:33 +0300
+  
+ArgumentError (Before process_action callback :authorize_request has not been defined):
+  
+app/controllers/api/auth_controller.rb:2:in `<class:AuthController>'
+app/controllers/api/auth_controller.rb:1:in `<main>'
+Started POST "/api/auth/signup" for ::1 at 2026-01-29 22:08:14 +0300
+  
+ArgumentError (Before process_action callback :authorize_request has not been defined):
+  
+app/controllers/api/auth_controller.rb:2:in `<class:AuthController>'
+app/controllers/api/auth_controller.rb:1:in `<main>'
+Started POST "/api/auth/signup" for ::1 at 2026-01-29 22:11:05 +0300
+  
+ArgumentError (Before process_action callback :authorize_request has not been defined):
+  
+app/controllers/api/auth_controller.rb:2:in `<class:AuthController>'
+app/controllers/api/auth_controller.rb:1:in `<main>'
+Started POST "/api/auth/signup" for ::1 at 2026-01-29 22:11:27 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Api'*/[0m
+  
+ArgumentError (Before process_action callback :authorize_request has not been defined):
+  
+app/controllers/api/auth_controller.rb:2:in `<class:AuthController>'
+app/controllers/api/auth_controller.rb:1:in `<main>'
+Started POST "/api/auth/signup" for ::1 at 2026-01-29 22:11:31 +0300
+  
+ArgumentError (Before process_action callback :authorize_request has not been defined):
+  
+app/controllers/api/auth_controller.rb:2:in `<class:AuthController>'
+app/controllers/api/auth_controller.rb:1:in `<main>'
+Started POST "/api/auth/signup" for ::1 at 2026-01-29 22:12:06 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Api'*/[0m
+  
+ArgumentError (Before process_action callback :authorize_request has not been defined):
+  
+app/controllers/api/auth_controller.rb:2:in `<class:AuthController>'
+app/controllers/api/auth_controller.rb:1:in `<main>'
+Started POST "/api/auth/signup" for ::1 at 2026-01-29 22:12:38 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Api'*/[0m
+  
+ArgumentError (Before process_action callback :authorize_request has not been defined):
+  
+app/controllers/api/auth_controller.rb:2:in `<class:AuthController>'
+app/controllers/api/auth_controller.rb:1:in `<main>'
+Started POST "/api/auth/signup" for ::1 at 2026-01-29 22:13:26 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Api'*/[0m
+  
+ArgumentError (Before process_action callback :authorize_request has not been defined):
+  
+app/controllers/api/auth_controller.rb:2:in `<class:AuthController>'
+app/controllers/api/auth_controller.rb:1:in `<main>'
+Started POST "/api/auth/login" for ::1 at 2026-01-29 22:14:22 +0300
+  
+ArgumentError (Before process_action callback :authorize_request has not been defined):
+  
+app/controllers/api/auth_controller.rb:2:in `<class:AuthController>'
+app/controllers/api/auth_controller.rb:1:in `<main>'
+Started POST "/api/auth/signup" for ::1 at 2026-01-29 22:14:31 +0300
+  
+ArgumentError (Before process_action callback :authorize_request has not been defined):
+  
+app/controllers/api/auth_controller.rb:2:in `<class:AuthController>'
+app/controllers/api/auth_controller.rb:1:in `<main>'
+Started POST "/api/auth/login" for ::1 at 2026-01-29 22:15:16 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Api'*/[0m
+Processing by Api::AuthController#login as */*
+  Parameters: {"user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT 1 /*action='login',application='Api',controller='auth'*/[0m
+  ↳ app/controllers/api/auth_controller.rb:15:in `login'
+Completed 401 Unauthorized in 183ms (Views: 0.4ms | ActiveRecord: 14.3ms (1 query, 0 cached) | GC: 53.5ms)
+
+
+Started POST "/api/auth/login" for ::1 at 2026-01-29 22:15:18 +0300
+Processing by Api::AuthController#login as */*
+  Parameters: {"user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT 1 /*action='login',application='Api',controller='auth'*/[0m
+  ↳ app/controllers/api/auth_controller.rb:15:in `login'
+Completed 401 Unauthorized in 9ms (Views: 0.4ms | ActiveRecord: 1.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/api/auth/signup" for ::1 at 2026-01-29 22:15:41 +0300
+Processing by Api::AuthController#signup as */*
+  Parameters: {"user"=>{"name"=>"Dorothy Jebet Kimeli", "email"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "auth"=>{"user"=>{"name"=>"Dorothy Jebet Kimeli", "email"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*action='signup',application='Api',controller='auth'*/[0m
+  ↳ app/controllers/api/auth_controller.rb:6:in `signup'
+  [1m[36mUser Exists? (2.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'dorothykimeli@gmail.com' LIMIT 1 /*action='signup',application='Api',controller='auth'*/[0m
+  ↳ app/controllers/api/auth_controller.rb:6:in `signup'
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "updated_at", "role", "password_reset_token", "password_reset_sent_at") VALUES ('2026-01-29 19:15:41.698683', 'dorothykimeli@gmail.com', 'Dorothy Jebet Kimeli', '$2a$12$fevwIP913TQkGc..aOiqzuCbDCLodTptaHI/1vKtujoG6ySnZ.3AK', '2026-01-29 19:15:41.698683', 'user', NULL, NULL) RETURNING "id" /*action='signup',application='Api',controller='auth'*/[0m
+  ↳ app/controllers/api/auth_controller.rb:6:in `signup'
+  [1m[36mTRANSACTION (10.8ms)[0m  [1m[35mCOMMIT /*action='signup',application='Api',controller='auth'*/[0m
+  ↳ app/controllers/api/auth_controller.rb:6:in `signup'
+Completed 201 Created in 370ms (Views: 0.1ms | ActiveRecord: 15.8ms (2 queries, 0 cached) | GC: 2.3ms)
+
+
+Started GET "/api/appointments" for ::1 at 2026-01-29 22:15:41 +0300
+Processing by Api::AppointmentsController#index as */*
+  Parameters: {"appointment"=>{}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1 /*action='index',application='Api',controller='appointments'*/[0m
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+  [1m[36mAppointment Load (0.8ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."user_id" = 4 /*action='index',application='Api',controller='appointments'*/[0m
+  ↳ app/controllers/api/appointments_controller.rb:7:in `index'
+Completed 200 OK in 28ms (Views: 9.2ms | ActiveRecord: 5.0ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/appointments" for ::1 at 2026-01-29 22:15:41 +0300
+Processing by Api::AppointmentsController#index as */*
+  Parameters: {"appointment"=>{}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1 /*action='index',application='Api',controller='appointments'*/[0m
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+  [1m[36mAppointment Load (0.6ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."user_id" = 4 /*action='index',application='Api',controller='appointments'*/[0m
+  ↳ app/controllers/api/appointments_controller.rb:7:in `index'
+Completed 200 OK in 9ms (Views: 3.3ms | ActiveRecord: 1.1ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/api/auth/login" for ::1 at 2026-01-29 22:16:42 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Api'*/[0m
+Processing by Api::AuthController#login as */*
+  Parameters: {"user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT 1 /*action='login',application='Api',controller='auth'*/[0m
+  ↳ app/controllers/api/auth_controller.rb:15:in `login'
+Completed 401 Unauthorized in 118ms (Views: 0.2ms | ActiveRecord: 8.5ms (1 query, 0 cached) | GC: 48.0ms)
+
+
+Started POST "/api/auth/signup" for ::1 at 2026-01-29 22:17:19 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Api'*/[0m
+Processing by Api::AuthController#signup as */*
+  Parameters: {"user"=>{"name"=>"Jane Doe", "email"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "auth"=>{"user"=>{"name"=>"Jane Doe", "email"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*action='signup',application='Api',controller='auth'*/[0m
+  ↳ app/controllers/api/auth_controller.rb:6:in `signup'
+  [1m[36mUser Exists? (2.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'jane@example.com' LIMIT 1 /*action='signup',application='Api',controller='auth'*/[0m
+  ↳ app/controllers/api/auth_controller.rb:6:in `signup'
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "updated_at", "role", "password_reset_token", "password_reset_sent_at") VALUES ('2026-01-29 19:17:20.638972', 'jane@example.com', 'Jane Doe', '$2a$12$cXrO6eXpkFZxVWeGAfveYOvWvnQjU2yljMK39v1K9dUJHLI.lHZJO', '2026-01-29 19:17:20.638972', 'user', NULL, NULL) RETURNING "id" /*action='signup',application='Api',controller='auth'*/[0m
+  ↳ app/controllers/api/auth_controller.rb:6:in `signup'
+  [1m[36mTRANSACTION (11.1ms)[0m  [1m[35mCOMMIT /*action='signup',application='Api',controller='auth'*/[0m
+  ↳ app/controllers/api/auth_controller.rb:6:in `signup'
+Completed 201 Created in 466ms (Views: 0.2ms | ActiveRecord: 24.0ms (2 queries, 0 cached) | GC: 44.9ms)
+
+
+Started POST "/api/auth/signup" for ::1 at 2026-01-29 22:17:36 +0300
+Processing by Api::AuthController#signup as */*
+  Parameters: {"user"=>{"name"=>"Jane Doe", "email"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "auth"=>{"user"=>{"name"=>"Jane Doe", "email"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*action='signup',application='Api',controller='auth'*/[0m
+  ↳ app/controllers/api/auth_controller.rb:6:in `signup'
+  [1m[36mUser Exists? (2.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'jane123@example.com' LIMIT 1 /*action='signup',application='Api',controller='auth'*/[0m
+  ↳ app/controllers/api/auth_controller.rb:6:in `signup'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "updated_at", "role", "password_reset_token", "password_reset_sent_at") VALUES ('2026-01-29 19:17:36.432457', 'jane123@example.com', 'Jane Doe', '$2a$12$Dkt6NPf.BRMuw4WAlicur.qUk.rbcTK4kMzYx//pHeNyR6rnT73ve', '2026-01-29 19:17:36.432457', 'user', NULL, NULL) RETURNING "id" /*action='signup',application='Api',controller='auth'*/[0m
+  ↳ app/controllers/api/auth_controller.rb:6:in `signup'
+  [1m[36mTRANSACTION (11.1ms)[0m  [1m[35mCOMMIT /*action='signup',application='Api',controller='auth'*/[0m
+  ↳ app/controllers/api/auth_controller.rb:6:in `signup'
+Completed 201 Created in 404ms (Views: 0.1ms | ActiveRecord: 13.7ms (2 queries, 0 cached) | GC: 0.8ms)
+
+
+Started POST "/api/auth/login" for ::1 at 2026-01-29 22:17:56 +0300
+Processing by Api::AuthController#login as */*
+  Parameters: {"user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT 1 /*action='login',application='Api',controller='auth'*/[0m
+  ↳ app/controllers/api/auth_controller.rb:15:in `login'
+Completed 401 Unauthorized in 11ms (Views: 0.4ms | ActiveRecord: 1.3ms (1 query, 0 cached) | GC: 1.1ms)
+
+
+Started POST "/api/auth/login" for ::1 at 2026-01-29 22:17:57 +0300
+Processing by Api::AuthController#login as */*
+  Parameters: {"user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT 1 /*action='login',application='Api',controller='auth'*/[0m
+  ↳ app/controllers/api/auth_controller.rb:15:in `login'
+Completed 401 Unauthorized in 9ms (Views: 0.3ms | ActiveRecord: 2.0ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/api/auth/login" for ::1 at 2026-01-29 22:17:57 +0300
+Processing by Api::AuthController#login as */*
+  Parameters: {"user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT 1 /*action='login',application='Api',controller='auth'*/[0m
+  ↳ app/controllers/api/auth_controller.rb:15:in `login'
+Completed 401 Unauthorized in 9ms (Views: 0.4ms | ActiveRecord: 2.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/api/auth/login" for ::1 at 2026-01-29 22:18:06 +0300
+Processing by Api::AuthController#login as */*
+  Parameters: {"user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT 1 /*action='login',application='Api',controller='auth'*/[0m
+  ↳ app/controllers/api/auth_controller.rb:15:in `login'
+Completed 401 Unauthorized in 9ms (Views: 0.4ms | ActiveRecord: 1.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/api/auth/login" for ::1 at 2026-01-29 22:19:11 +0300
+Processing by Api::AuthController#login as */*
+  Parameters: {"user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = 'dorothykimeli@gmail.com' LIMIT 1 /*action='login',application='Api',controller='auth'*/[0m
+  ↳ app/controllers/api/auth_controller.rb:15:in `login'
+Completed 200 OK in 400ms (Views: 0.2ms | ActiveRecord: 9.0ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/appointments" for ::1 at 2026-01-29 22:19:11 +0300
+Processing by Api::AppointmentsController#index as */*
+  Parameters: {"appointment"=>{}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1 /*action='index',application='Api',controller='appointments'*/[0m
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+  [1m[36mAppointment Load (0.9ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."user_id" = 4 /*action='index',application='Api',controller='appointments'*/[0m
+  ↳ app/controllers/api/appointments_controller.rb:7:in `index'
+Completed 200 OK in 21ms (Views: 7.2ms | ActiveRecord: 5.7ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/appointments" for ::1 at 2026-01-29 22:19:11 +0300
+Processing by Api::AppointmentsController#index as */*
+  Parameters: {"appointment"=>{}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1 /*action='index',application='Api',controller='appointments'*/[0m
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+  [1m[36mAppointment Load (0.7ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."user_id" = 4 /*action='index',application='Api',controller='appointments'*/[0m
+  ↳ app/controllers/api/appointments_controller.rb:7:in `index'
+Completed 200 OK in 11ms (Views: 4.6ms | ActiveRecord: 1.4ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/api/appointments" for ::1 at 2026-01-29 22:20:34 +0300
+Processing by Api::AppointmentsController#create as */*
+  Parameters: {"appointment"=>{"doctorName"=>"Dorothy jebet", "date"=>"2026-01-29", "time"=>"07:00", "reason"=>"consultation"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1 /*action='create',application='Api',controller='appointments'*/[0m
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+[31mUnpermitted parameter: :doctorName. Context: { controller: Api::AppointmentsController, action: create, request: #<ActionDispatch::Request:0x000073765f743df0>, params: {"appointment"=>{"doctorName"=>"Dorothy jebet", "date"=>"2026-01-29", "time"=>"07:00", "reason"=>"consultation"}, "controller"=>"api/appointments", "action"=>"create"} }[0m
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 5.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'date' for Appointment.)
+Caused by: NoMethodError (undefined method `date=' for #<Appointment id: nil, appointment_date: nil, created_at: nil, patient_name: nil, reason: nil, updated_at: nil, user_id: nil>)
+
+Information for: ActiveModel::UnknownAttributeError (unknown attribute 'date' for Appointment.):
+  
+app/controllers/api/appointments_controller.rb:11:in `create'
+
+Information for cause: NoMethodError (undefined method `date=' for #<Appointment id: nil, appointment_date: nil, created_at: nil, patient_name: nil, reason: nil, updated_at: nil, user_id: nil>):
+  
+app/controllers/api/appointments_controller.rb:11:in `create'
+Started POST "/api/appointments" for ::1 at 2026-01-29 22:20:50 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Api'*/[0m
+Processing by Api::AppointmentsController#create as */*
+  Parameters: {"appointment"=>{"doctorName"=>"Dorothy jebet", "date"=>"2026-01-29", "time"=>"07:00", "reason"=>"consultation"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1 /*action='create',application='Api',controller='appointments'*/[0m
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+[31mUnpermitted parameter: :doctorName. Context: { controller: Api::AppointmentsController, action: create, request: #<ActionDispatch::Request:0x000072ae42ecef60>, params: {"appointment"=>{"doctorName"=>"Dorothy jebet", "date"=>"2026-01-29", "time"=>"07:00", "reason"=>"consultation"}, "controller"=>"api/appointments", "action"=>"create"} }[0m
+Completed 500 Internal Server Error in 83ms (ActiveRecord: 12.5ms (1 query, 0 cached) | GC: 2.1ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'date' for Appointment.)
+Caused by: NoMethodError (undefined method `date=' for #<Appointment id: nil, appointment_date: nil, created_at: nil, patient_name: nil, reason: nil, updated_at: nil, user_id: nil>)
+
+Information for: ActiveModel::UnknownAttributeError (unknown attribute 'date' for Appointment.):
+  
+app/controllers/api/appointments_controller.rb:11:in `create'
+
+Information for cause: NoMethodError (undefined method `date=' for #<Appointment id: nil, appointment_date: nil, created_at: nil, patient_name: nil, reason: nil, updated_at: nil, user_id: nil>):
+  
+app/controllers/api/appointments_controller.rb:11:in `create'
+Started POST "/api/appointments" for ::1 at 2026-01-29 22:21:50 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Api'*/[0m
+Processing by Api::AppointmentsController#create as */*
+  Parameters: {"appointment"=>{"doctorName"=>"Dorothy jebet", "date"=>"2026-01-29", "time"=>"07:00", "reason"=>"consultation"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1 /*action='create',application='Api',controller='appointments'*/[0m
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+[31mUnpermitted parameter: :doctorName. Context: { controller: Api::AppointmentsController, action: create, request: #<ActionDispatch::Request:0x000079fa88fceed0>, params: {"appointment"=>{"doctorName"=>"Dorothy jebet", "date"=>"2026-01-29", "time"=>"07:00", "reason"=>"consultation"}, "controller"=>"api/appointments", "action"=>"create"} }[0m
+Completed 500 Internal Server Error in 86ms (ActiveRecord: 12.4ms (1 query, 0 cached) | GC: 2.1ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'date' for Appointment.)
+Caused by: NoMethodError (undefined method `date=' for #<Appointment id: nil, appointment_date: nil, created_at: nil, patient_name: nil, reason: nil, updated_at: nil, user_id: nil>)
+
+Information for: ActiveModel::UnknownAttributeError (unknown attribute 'date' for Appointment.):
+  
+app/controllers/api/appointments_controller.rb:11:in `create'
+
+Information for cause: NoMethodError (undefined method `date=' for #<Appointment id: nil, appointment_date: nil, created_at: nil, patient_name: nil, reason: nil, updated_at: nil, user_id: nil>):
+  
+app/controllers/api/appointments_controller.rb:11:in `create'
+Started POST "/api/appointments" for ::1 at 2026-01-29 22:22:53 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Api'*/[0m
+  
+ArgumentError (Reported error must be an Exception, got: #<SyntaxError: /home/dorothy-jebet/Documents/projects/patient-appointment-booking-app/api/app/controllers/api/appointments_controller.rb:60: syntax error, unexpected `end'>)
+Caused by: SyntaxError (/home/dorothy-jebet/Documents/projects/patient-appointment-booking-app/api/app/controllers/api/appointments_controller.rb:60: syntax error, unexpected `end')
+
+Information for: ArgumentError (Reported error must be an Exception, got: #<SyntaxError: /home/dorothy-jebet/Documents/projects/patient-appointment-booking-app/api/app/controllers/api/appointments_controller.rb:60: syntax error, unexpected `end'>):
+  
+activesupport (8.1.2) lib/active_support/error_reporter.rb:235:in `report'
+actionpack (8.1.2) lib/action_dispatch/middleware/executor.rb:36:in `rescue in call'
+actionpack (8.1.2) lib/action_dispatch/middleware/executor.rb:32:in `call'
+actionpack (8.1.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+actionpack (8.1.2) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.1.2) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.1.2) lib/rails/rack/logger.rb:29:in `call'
+actionpack (8.1.2) lib/action_dispatch/middleware/remote_ip.rb:98:in `call'
+actionpack (8.1.2) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.2.4) lib/rack/runtime.rb:24:in `call'
+activesupport (8.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:30:in `call'
+actionpack (8.1.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.1.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.1.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.1.2) lib/action_dispatch/middleware/executor.rb:20:in `call'
+actionpack (8.1.2) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.2.4) lib/rack/sendfile.rb:131:in `call'
+actionpack (8.1.2) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+rack-cors (3.0.0) lib/rack/cors.rb:102:in `call'
+railties (8.1.2) lib/rails/engine.rb:534:in `call'
+puma (7.2.0) lib/puma/configuration.rb:296:in `call'
+puma (7.2.0) lib/puma/request.rb:103:in `block in handle_request'
+puma (7.2.0) lib/puma/thread_pool.rb:355:in `with_force_shutdown'
+puma (7.2.0) lib/puma/request.rb:102:in `handle_request'
+puma (7.2.0) lib/puma/server.rb:503:in `process_client'
+puma (7.2.0) lib/puma/server.rb:262:in `block in run'
+puma (7.2.0) lib/puma/thread_pool.rb:182:in `block in spawn_thread'
+
+Information for cause: SyntaxError (/home/dorothy-jebet/Documents/projects/patient-appointment-booking-app/api/app/controllers/api/appointments_controller.rb:60: syntax error, unexpected `end'):
+  
+app/controllers/api/appointments_controller.rb:60: syntax error, unexpected `end'
+Started POST "/api/appointments" for ::1 at 2026-01-29 22:23:36 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Api'*/[0m
+Processing by Api::AppointmentsController#create as */*
+  Parameters: {"appointment"=>{"doctorName"=>"Dorothy jebet", "date"=>"2026-01-29", "time"=>"07:00", "reason"=>"consultation"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1 /*action='create',application='Api',controller='appointments'*/[0m
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+Completed 500 Internal Server Error in 83ms (ActiveRecord: 12.6ms (1 query, 0 cached) | GC: 2.1ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'time' for Appointment.)
+Caused by: NoMethodError (undefined method `time=' for #<Appointment id: nil, appointment_date: nil, created_at: nil, patient_name: nil, reason: nil, updated_at: nil, user_id: nil>)
+
+Information for: ActiveModel::UnknownAttributeError (unknown attribute 'time' for Appointment.):
+  
+app/controllers/api/appointments_controller.rb:15:in `create'
+
+Information for cause: NoMethodError (undefined method `time=' for #<Appointment id: nil, appointment_date: nil, created_at: nil, patient_name: nil, reason: nil, updated_at: nil, user_id: nil>):
+  
+app/controllers/api/appointments_controller.rb:15:in `create'
+Started POST "/api/appointments" for ::1 at 2026-01-29 22:24:32 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Api'*/[0m
+Processing by Api::AppointmentsController#create as */*
+  Parameters: {"appointment"=>{"doctorName"=>"Dorothy jebet", "date"=>"2026-01-29", "time"=>"07:00", "reason"=>"consultation"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1 /*action='create',application='Api',controller='appointments'*/[0m
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*action='create',application='Api',controller='appointments'*/[0m
+  ↳ app/controllers/api/appointments_controller.rb:20:in `create'
+  [1m[36mAppointment Create (2.3ms)[0m  [1m[32mINSERT INTO "appointments" ("appointment_date", "created_at", "patient_name", "reason", "updated_at", "user_id") VALUES ('2026-01-29 07:00:00', '2026-01-29 19:24:32.397186', 'Dorothy jebet', 'consultation', '2026-01-29 19:24:32.397186', 4) RETURNING "id" /*action='create',application='Api',controller='appointments'*/[0m
+  ↳ app/controllers/api/appointments_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (11.1ms)[0m  [1m[35mCOMMIT /*action='create',application='Api',controller='appointments'*/[0m
+  ↳ app/controllers/api/appointments_controller.rb:20:in `create'
+Completed 201 Created in 76ms (Views: 0.3ms | ActiveRecord: 22.8ms (2 queries, 0 cached) | GC: 2.2ms)
+
+
+Started POST "/api/auth/login" for ::1 at 2026-01-29 22:33:31 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Api'*/[0m
+Processing by Api::AuthController#login as */*
+  Parameters: {"user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = 'dorothykimeli@gmail.com' LIMIT 1 /*action='login',application='Api',controller='auth'*/[0m
+  ↳ app/controllers/api/auth_controller.rb:15:in `login'
+Completed 200 OK in 279ms (Views: 0.2ms | ActiveRecord: 7.3ms (1 query, 0 cached) | GC: 30.7ms)
+
+
+Started GET "/api/appointments" for ::1 at 2026-01-29 22:33:32 +0300
+Processing by Api::AppointmentsController#index as */*
+  Parameters: {"appointment"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1 /*action='index',application='Api',controller='appointments'*/[0m
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+  [1m[36mAppointment Load (0.5ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."user_id" = 4 /*action='index',application='Api',controller='appointments'*/[0m
+  ↳ app/controllers/api/appointments_controller.rb:7:in `index'
+Completed 200 OK in 15ms (Views: 7.8ms | ActiveRecord: 3.2ms (2 queries, 0 cached) | GC: 1.0ms)
+
+
+Started GET "/api/appointments" for ::1 at 2026-01-29 22:33:32 +0300
+Processing by Api::AppointmentsController#index as */*
+  Parameters: {"appointment"=>{}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1 /*action='index',application='Api',controller='appointments'*/[0m
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+  [1m[36mAppointment Load (0.4ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."user_id" = 4 /*action='index',application='Api',controller='appointments'*/[0m
+  ↳ app/controllers/api/appointments_controller.rb:7:in `index'
+Completed 200 OK in 6ms (Views: 2.2ms | ActiveRecord: 1.0ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
