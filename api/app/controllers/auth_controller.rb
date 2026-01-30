@@ -1,4 +1,4 @@
-class AuthController < ApplicationController
+class Api::AuthController < ApplicationController
   def signup
     user = User.new(user_params)
     if user.save
@@ -18,11 +18,11 @@ class AuthController < ApplicationController
       render json: { error: "Invalid email or password" }, status: :unauthorized
     end
   end
-def logout
-    # For JWT, logout is typically handled on the client side by deleting the token.
-    # Here, we can just respond with a message.
+
+  def logout
     render json: { message: "Logged out successfully" }, status: :ok
-end
+  end
+
   private
 
   def user_params

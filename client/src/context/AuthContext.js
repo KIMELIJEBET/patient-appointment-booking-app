@@ -12,32 +12,17 @@ export default function AuthProvider({ children }) {
         const storedToken = localStorage.getItem('token');
         const storedUser = localStorage.getItem('user');
 
-        if (storedToken) {
+        if (storedToken && storedUser) {
             try {
-                const response = await fetch('http://localhost:3000/api/auth/verify', {
-                    headers: {
-                        'Authorization': `Bearer ${storedToken}`,
-                        'Content-Type': 'application/json',
-                    },
-                });
-
-                if (response.ok) {
-                    const data = await response.json();
-                    setUser(data.user);
-                    setToken(data.token);
-                    setAuthenticated(true);
-                    localStorage.setItem('user', JSON.stringify(data.user));
-                } else {
-                    // Token is invalid or expired
-                    clearAuth();
-                }
+                // Trust the stored token and user data to keep session persistent
+                const userData = JSON.parse(storedUser);
+                setUser(userData);
+                setToken(storedToken);
+                setAuthenticated(true);
             } catch (err) {
-                console.log('Token verification failed');
+                console.log('Failed to restore session');
                 clearAuth();
             }
-        } else if (storedUser) {
-            // User data exists but no token, clear it
-            clearAuth();
         }
 
         setLoading(false);

@@ -7,7 +7,9 @@ export default function Dashboard() {
     const [user, setUser] = useState(null);
     const [appointments, setAppointments] = useState([]);
     const [showBookModal, setShowBookModal] = useState(false);
+    const [showEditModal, setShowEditModal] = useState(false);
     const [showProfile, setShowProfile] = useState(false);
+    const [editingAppointment, setEditingAppointment] = useState(null);
     const [formData, setFormData] = useState({
         doctorName: '',
         date: '',
@@ -90,6 +92,45 @@ export default function Dashboard() {
         }
     };
 
+    const handleEditAppointment = (appointment) => {
+        setEditingAppointment(appointment);
+        setFormData({
+            doctorName: appointment.doctor_name,
+            date: appointment.date.split(' ')[0],
+            time: appointment.time,
+            reason: appointment.reason,
+        });
+        setShowEditModal(true);
+    };
+
+    const handleUpdateAppointment = async (e) => {
+        e.preventDefault();
+        setError('');
+
+        try {
+            const response = await fetch(`http://localhost:3000/api/appointments/${editingAppointment.id}`, {
+                method: 'PATCH',
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ appointment: formData }),
+            });
+
+            if (response.ok) {
+                const updatedAppointment = await response.json();
+                setAppointments(appointments.map(apt => apt.id === editingAppointment.id ? updatedAppointment : apt));
+                setShowEditModal(false);
+                setEditingAppointment(null);
+                setFormData({ doctorName: '', date: '', time: '', reason: '' });
+            } else {
+                setError('Failed to update appointment');
+            }
+        } catch (err) {
+            setError('An error occurred. Please try again.');
+        }
+    };
+
     const handleDeleteAppointment = async (appointmentId) => {
         if (!window.confirm('Are you sure you want to delete this appointment?')) {
             return;
@@ -108,6 +149,13 @@ export default function Dashboard() {
             }
         } catch (err) {
             setError('Failed to delete appointment');
+        }
+    };
+
+    const scrollToAppointments = () => {
+        const element = document.querySelector('.appointments-list');
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
         }
     };
 
@@ -188,7 +236,7 @@ export default function Dashboard() {
                         <button className="action-button primary" onClick={() => setShowBookModal(true)}>
                             + Book New Appointment
                         </button>
-                        <button className="action-button secondary">
+                        <button className="action-button secondary" onClick={scrollToAppointments}>
                             📋 View All Appointments
                         </button>
                     </div>
@@ -212,7 +260,7 @@ export default function Dashboard() {
                                         <p><strong>Reason:</strong> {apt.reason}</p>
                                     </div>
                                     <div className="appointment-actions">
-                                        <button className="edit-btn">Edit</button>
+                                        <button className="edit-btn" onClick={() => handleEditAppointment(apt)}>Edit</button>
                                         <button className="delete-btn" onClick={() => handleDeleteAppointment(apt.id)}>Delete</button>
                                     </div>
                                 </div>
@@ -237,6 +285,10 @@ export default function Dashboard() {
                                     <div className="appointment-details">
                                         <p><strong>Time:</strong> {apt.time}</p>
                                         <p><strong>Reason:</strong> {apt.reason}</p>
+                                    </div>
+                                    <div className="appointment-actions">
+                                        <button className="edit-btn" onClick={() => handleEditAppointment(apt)}>Edit</button>
+                                        <button className="delete-btn" onClick={() => handleDeleteAppointment(apt.id)}>Delete</button>
                                     </div>
                                 </div>
                             ))}
@@ -324,6 +376,78 @@ export default function Dashboard() {
                             <div className="modal-actions">
                                 <button type="submit" className="submit-btn">Book Appointment</button>
                                 <button type="button" className="cancel-btn" onClick={() => setShowBookModal(false)}>Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            )}
+
+            {showEditModal && (
+                <div className="modal-overlay" onClick={() => setShowEditModal(false)}>
+                    <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+                        <div className="modal-header">
+                            <h2>Edit Appointment</h2>
+                            <button className="close-modal" onClick={() => setShowEditModal(false)}>×</button>
+                        </div>
+
+                        {error && <div className="error-message">{error}</div>}
+
+                        <form onSubmit={handleUpdateAppointment}>
+                            <div className="form-group">
+                                <label htmlFor="doctorName">Doctor Name</label>
+                                <input
+                                    type="text"
+                                    id="doctorName"
+                                    name="doctorName"
+                                    value={formData.doctorName}
+                                    onChange={handleFormChange}
+                                    placeholder="e.g., John Smith"
+                                    required
+                                />
+                            </div>
+
+                            <div className="form-row">
+                                <div className="form-group">
+                                    <label htmlFor="date">Appointment Date</label>
+                                    <input
+                                        type="date"
+                                        id="date"
+                                        name="date"
+                                        value={formData.date}
+                                        onChange={handleFormChange}
+                                        required
+                                    />
+                                </div>
+
+                                <div className="form-group">
+                                    <label htmlFor="time">Time</label>
+                                    <input
+                                        type="time"
+                                        id="time"
+                                        name="time"
+                                        value={formData.time}
+                                        onChange={handleFormChange}
+                                        required
+                                    />
+                                </div>
+                            </div>
+
+                            <div className="form-group">
+                                <label htmlFor="reason">Reason for Visit</label>
+                                <textarea
+                                    id="reason"
+                                    name="reason"
+                                    value={formData.reason}
+                                    onChange={handleFormChange}
+                                    placeholder="Describe the reason for your appointment"
+                                    rows="4"
+                                    required
+                                />
+                            </div>
+
+                            <div className="modal-actions">
+                                <button type="submit" className="submit-btn">Update Appointment</button>
+                                <button type="button" className="cancel-btn" onClick={() => setShowEditModal(false)}>Cancel</button>
                             </div>
                         </form>
                     </div>

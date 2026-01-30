@@ -4,7 +4,7 @@ class Api::AppointmentsController < Api::ApplicationController
 
   def index
     @appointments = current_user.appointments
-    render json: @appointments, status: :ok
+    render json: @appointments.map { |apt| format_appointment(apt) }, status: :ok
   end
 
   def create
@@ -18,14 +18,14 @@ class Api::AppointmentsController < Api::ApplicationController
     
     @appointment = current_user.appointments.build(appointment_data)
     if @appointment.save
-      render json: @appointment, status: :created
+      render json: format_appointment(@appointment), status: :created
     else
       render json: { errors: @appointment.errors.full_messages }, status: :unprocessable_entity
     end
   end
 
   def show
-    render json: @appointment, status: :ok
+    render json: format_appointment(@appointment), status: :ok
   end
 
   def update
@@ -38,7 +38,7 @@ class Api::AppointmentsController < Api::ApplicationController
     appointment_data['appointment_date'] = "#{date} #{time}" if date && time
     
     if @appointment.update(appointment_data)
-      render json: @appointment, status: :ok
+      render json: format_appointment(@appointment), status: :ok
     else
       render json: { errors: @appointment.errors.full_messages }, status: :unprocessable_entity
     end
@@ -63,5 +63,18 @@ class Api::AppointmentsController < Api::ApplicationController
 
   def appointment_params
     params.require(:appointment).permit(:doctorName, :date, :time, :reason)
+  end
+
+  def format_appointment(appointment)
+    date_time = appointment.appointment_date
+    {
+      id: appointment.id,
+      doctor_name: appointment.patient_name,
+      date: date_time.to_date.to_s,
+      time: date_time.strftime('%H:%M'),
+      reason: appointment.reason,
+      created_at: appointment.created_at,
+      updated_at: appointment.updated_at
+    }
   end
 end
