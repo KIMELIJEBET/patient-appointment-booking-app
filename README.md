@@ -36,4 +36,42 @@
 
 - Remember to replace your username when cloning.
 
-    - git@github.com:KIMELIJEBET/patient-appointment-booking-app.git
+        - git@github.com:KIMELIJEBET/patient-appointment-booking-app.git
+
+  # Project SetUp
+- Run and install our dependency gems in the Gemfile in the terminal:
+
+         - bundle install
+
+- Run the migrations:
+
+        - rails db:migrate
+
+- Seed the database data:
+
+        - rails db:seed
+- Run the server:
+
+        - rails s   
+
+# React Set-up
+- React dependencies
+
+        - npm install 
+
+- Run the react server:
+
+        - npm run dev
+
+# Technologies used
+- Ruby on Rails
+- React
+- CSS
+# Authors
+- This project was contributed to by:
+- Dorothy Jebet
+
+
+# License
+- MIT License
+
