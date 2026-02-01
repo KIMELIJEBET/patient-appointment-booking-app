@@ -3,18 +3,24 @@
 
  # GET STARTED 
  # Clone Repository
- - git clone git@github.com:KIMELIJEBET/patient-appointment-booking-app.git
+   - git clone git@github.com:KIMELIJEBET/patient-appointment-booking-app.git
 
- - cd patient-appointment-booking-app
+   - cd patient-appointment-booking-app
 
  # Backend setup
  - cd api
+
  - bundle install
+
  - rails db:create
+
  - rails db:migrate
+
  - rails server
 
  # Frontend setup 
  - cd client
+
  - npm install
+ 
   - npm start
