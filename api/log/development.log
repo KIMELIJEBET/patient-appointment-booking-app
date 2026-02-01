@@ -2427,3 +2427,111 @@ Started GET "/api/auth/verify_token" for ::1 at 2026-02-01 21:57:14 +0300
   
 ActionController::RoutingError (No route matches [GET] "/api/auth/verify_token"):
   
+Started POST "/api/auth/login" for ::1 at 2026-02-01 22:03:13 +0300
+Processing by Api::AuthController#login as */*
+  Parameters: {"user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = 'dorothykimeli@gmail.com' LIMIT 1 /*action='login',application='Api',controller='auth'*/[0m
+  ↳ app/controllers/api/auth_controller.rb:15:in `login'
+Completed 200 OK in 427ms (Views: 0.1ms | ActiveRecord: 15.0ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/appointments" for ::1 at 2026-02-01 22:03:14 +0300
+Processing by Api::AppointmentsController#index as */*
+  Parameters: {"appointment"=>{}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1 /*action='index',application='Api',controller='appointments'*/[0m
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+  [1m[36mAppointment Load (0.8ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."user_id" = 4 /*action='index',application='Api',controller='appointments'*/[0m
+  ↳ app/controllers/api/appointments_controller.rb:7:in `map'
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 1.7ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/appointments" for ::1 at 2026-02-01 22:03:14 +0300
+Processing by Api::AppointmentsController#index as */*
+  Parameters: {"appointment"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1 /*action='index',application='Api',controller='appointments'*/[0m
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+  [1m[36mAppointment Load (0.6ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."user_id" = 4 /*action='index',application='Api',controller='appointments'*/[0m
+  ↳ app/controllers/api/appointments_controller.rb:7:in `map'
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 1.0ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/auth/verify_token" for ::1 at 2026-02-01 22:03:19 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/api/auth/verify_token"):
+  
+Started GET "/api/auth/verify_token" for ::1 at 2026-02-01 22:03:19 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/api/auth/verify_token"):
+  
+Started POST "/api/auth/login" for ::1 at 2026-02-01 22:03:51 +0300
+Processing by Api::AuthController#login as */*
+  Parameters: {"user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = 'dorothykimeli@gmail.com' LIMIT 1 /*action='login',application='Api',controller='auth'*/[0m
+  ↳ app/controllers/api/auth_controller.rb:15:in `login'
+Completed 200 OK in 324ms (Views: 0.1ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/appointments" for ::1 at 2026-02-01 22:03:52 +0300
+Processing by Api::AppointmentsController#index as */*
+  Parameters: {"appointment"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1 /*action='index',application='Api',controller='appointments'*/[0m
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+  [1m[36mAppointment Load (0.5ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."user_id" = 4 /*action='index',application='Api',controller='appointments'*/[0m
+  ↳ app/controllers/api/appointments_controller.rb:7:in `map'
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 1.0ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/appointments" for ::1 at 2026-02-01 22:03:52 +0300
+Processing by Api::AppointmentsController#index as */*
+  Parameters: {"appointment"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1 /*action='index',application='Api',controller='appointments'*/[0m
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+  [1m[36mAppointment Load (0.6ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."user_id" = 4 /*action='index',application='Api',controller='appointments'*/[0m
+  ↳ app/controllers/api/appointments_controller.rb:7:in `map'
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 1.1ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/auth/verify_token" for ::1 at 2026-02-01 22:03:57 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/api/auth/verify_token"):
+  
+Started GET "/api/auth/verify_token" for ::1 at 2026-02-01 22:03:57 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/api/auth/verify_token"):
+  
+Started POST "/api/auth/login" for ::1 at 2026-02-01 22:06:20 +0300
+Processing by Api::AuthController#login as */*
+  Parameters: {"user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = 'dorothykimeli@gmail.com' LIMIT 1 /*action='login',application='Api',controller='auth'*/[0m
+  ↳ app/controllers/api/auth_controller.rb:15:in `login'
+Completed 200 OK in 365ms (Views: 0.1ms | ActiveRecord: 1.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/appointments" for ::1 at 2026-02-01 22:06:21 +0300
+Processing by Api::AppointmentsController#index as */*
+  Parameters: {"appointment"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1 /*action='index',application='Api',controller='appointments'*/[0m
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+  [1m[36mAppointment Load (0.5ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."user_id" = 4 /*action='index',application='Api',controller='appointments'*/[0m
+  ↳ app/controllers/api/appointments_controller.rb:7:in `map'
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 1.0ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/appointments" for ::1 at 2026-02-01 22:06:21 +0300
+Processing by Api::AppointmentsController#index as */*
+  Parameters: {"appointment"=>{}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1 /*action='index',application='Api',controller='appointments'*/[0m
+  ↳ app/controllers/application_controller.rb:29:in `current_user'
+  [1m[36mAppointment Load (0.5ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."user_id" = 4 /*action='index',application='Api',controller='appointments'*/[0m
+  ↳ app/controllers/api/appointments_controller.rb:7:in `map'
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 1.1ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/auth/verify_token" for ::1 at 2026-02-01 22:06:24 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/api/auth/verify_token"):
+  
+Started GET "/api/auth/verify_token" for ::1 at 2026-02-01 22:06:24 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/api/auth/verify_token"):
+  

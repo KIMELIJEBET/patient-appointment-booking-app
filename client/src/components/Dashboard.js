@@ -234,7 +234,7 @@ export default function Dashboard() {
                     </div>
                     <div className="action-buttons">
                         <button className="action-button primary" onClick={() => setShowBookModal(true)}>
-                            + Book New Appointment
+                            New Appointment
                         </button>
                         <button className="action-button secondary" onClick={scrollToAppointments}>
                             📋 View All Appointments
