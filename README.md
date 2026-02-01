@@ -17,15 +17,15 @@
 
 - Clone the repo by using the following:
 
-    -  git@github.com:KIMELIJEBET/patient-appointment-booking-app.git
+         -  git@github.com:KIMELIJEBET/patient-appointment-booking-app.git
 
 - Change directory to the repo folder:
 
-    - cd patient-appointment-booking-app.git
+        - cd patient-appointment-booking-app.git
 
 - Open it in Visual Studio Code
 
-    - code .
+        -  code .
 
   # Alternative Two
 - On the top right corner of this page there is a button labelled Fork.
