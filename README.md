@@ -2,25 +2,38 @@
  - A full stack application patient appointment booking system that allows users to schedule and manage medical appointments online, with an admin view for coordinating and managing all appointments.
 
  # GET STARTED 
- # Clone Repository
-   - git clone git@github.com:KIMELIJEBET/patient-appointment-booking-app.git
+ - In order to use this repo you need to have the following installed:
 
-   - cd patient-appointment-booking-app
+ - OS [either: Windows 10+, Linux or MacOS]
 
- # Backend setup
- - cd api
+ - Ruby - 3.1.+
 
- - bundle install
+ # installation 
+ - To use this repo on your machine requires some simple steps
 
- - rails db:create
 
- - rails db:migrate
+# Alternative One
+- Open a terminal / command line interface on your computer
 
- - rails server
+- Clone the repo by using the following:
 
- # Frontend setup 
- - cd client
+    -  git@github.com:KIMELIJEBET/patient-appointment-booking-app.git
 
- - npm install
- 
-  - npm start
+- Change directory to the repo folder:
+
+    - cd patient-appointment-booking-app.git
+
+- Open it in Visual Studio Code
+
+    - code .
+
+  # Alternative Two
+- On the top right corner of this page there is a button labelled Fork.
+
+- Click on that button to fork the repo to your own account.
+
+- Take on the process in Alternative One above.
+
+- Remember to replace your username when cloning.
+
+    - git@github.com:KIMELIJEBET/patient-appointment-booking-app.git
