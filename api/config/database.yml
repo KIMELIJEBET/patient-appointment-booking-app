@@ -15,17 +15,24 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  host: localhost
-  username: dorothy-jebet
-  password: Joreds@06
-  max_connections: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: booking
+  password: jebet
+  host: 127.0.0.1
+  port: 5432
 
 development:
   <<: *default
   database: api_development
-  
-  production:
+
+test:
   <<: *default
+  database: api_test
+
+production:
+  <<: *default
+  database: api_production
+
   url: <%= ENV['DATABASE_URL'] %>
 
   # The specified database role being used to connect to PostgreSQL.
