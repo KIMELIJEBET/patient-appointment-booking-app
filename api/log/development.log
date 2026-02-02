@@ -2535,3 +2535,4 @@ Started GET "/api/auth/verify_token" for ::1 at 2026-02-01 22:06:24 +0300
   
 ActionController::RoutingError (No route matches [GET] "/api/auth/verify_token"):
   
+  [1m[35m (131.0ms)[0m  [1m[35mCREATE DATABASE "api_development" ENCODING = 'unicode' /*application='Api'*/[0m
